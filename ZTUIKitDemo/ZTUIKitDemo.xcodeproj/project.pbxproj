@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -169,7 +169,7 @@
 				971D905D2C0F6C0300EE3A49 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				976BF0A72CCA6BED004F7D55 /* XCRemoteSwiftPackageReference "ZTChain" */,
 				7B44650E2CEF1141003DDF76 /* XCRemoteSwiftPackageReference "Stevia" */,
-				97458C142CF0C4200031CA26 /* XCLocalSwiftPackageReference "../../ZTUIKit" */,
+				977A633B2CF2E75A00C08E46 /* XCRemoteSwiftPackageReference "ZTUIKit" */,
 			);
 			productRefGroup = 971D903B2C0F693000EE3A49 /* Products */;
 			projectDirPath = "";
@@ -423,13 +423,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		97458C142CF0C4200031CA26 /* XCLocalSwiftPackageReference "../../ZTUIKit" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../ZTUIKit;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		7B44650E2CEF1141003DDF76 /* XCRemoteSwiftPackageReference "Stevia" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -453,6 +446,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.4;
+			};
+		};
+		977A633B2CF2E75A00C08E46 /* XCRemoteSwiftPackageReference "ZTUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/willonboy/ZTUIKit";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
