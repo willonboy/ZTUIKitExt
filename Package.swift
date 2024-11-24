@@ -18,7 +18,7 @@ let package = Package(
     targets: [
         .target(
             name: "ZTUIKitExt",
-            dependencies: []),
+            dependencies: ["ZTChain", "ZTStyle"]),
     ],
     swiftLanguageVersions: [.version("5.1")]
 )
