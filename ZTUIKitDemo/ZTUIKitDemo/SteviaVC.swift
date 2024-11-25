@@ -20,12 +20,19 @@ func loginWidget() -> some UIView {
     let stack = ZTVStack {
         ZTWrapperWidget {
             ZTHStack {
-                UILabel("User:").zt.ref(&nameLbl).subject
+                UILabel("User:").zt.ref(&nameLbl).onTap {_, handler in
+                    print("on tapped")
+                    handler.cancel()
+                }.onLongPress {_,_ in
+                    print("on onLongPress")
+                }.subject
                 ZTSpacer(axis: .h)
-                UITextField("字母数字下划线").zt.ref(&usrTextField).backgroundColor(.gray)
-                    .makeStevia { v, dom in
-                        v.width(200).height(100)
-                    }.subject
+                UITextField("字母数字下划线").zt.ref(&usrTextField).backgroundColor(.gray).onEditingChanged { ctrl, _ in
+                    guard let t = ctrl as? UITextField else {return}
+                    print("input ", t.text ?? "")
+                }.makeStevia { v, dom in
+                    v.width(200).height(100)
+                }.subject
             }.zt.alignment(.fill).spacing(2).makeStevia { v, dom in
                 |v|
             }.subject

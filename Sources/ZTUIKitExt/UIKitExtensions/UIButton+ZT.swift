@@ -17,7 +17,7 @@ import ZTChain
 @MainActor
 public extension UIButton {
     private static var zt_onClickClosureKey: UInt8 = 0
-    convenience init(_ title:String, _ onClick:((UIButton)->Void)?) {
+    convenience init(_ title:String, _ onClick:((UIButton)->Void)? = nil) {
         self.init(type:.custom)
         setTitle(title, for: .normal)
         self.onClick = onClick
@@ -78,6 +78,19 @@ public extension ZTWrapper where Subject : UIButton {
     
     func bgImg(_ named:String, state: UIControl.State = .normal) -> Self {
         subject.setBackgroundImage(UIImage(named: named), for: state)
+        return self
+    }
+    
+    func font(_ f:UIFont) -> Self {
+        subject.titleLabel?.font = f
+        return self
+    }
+}
+
+public extension ZTWrapper where Subject : UIButton {
+    @MainActor
+    func onClick(_ action:@escaping (UIButton)->Void) -> Self {
+        subject.onClick = action
         return self
     }
 }

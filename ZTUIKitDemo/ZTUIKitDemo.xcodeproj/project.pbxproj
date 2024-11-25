@@ -25,6 +25,7 @@
 		97B3AE672CF3294B0096B33B /* UINavigationController+ZT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B3AE652CF3294B0096B33B /* UINavigationController+ZT.swift */; };
 		97B3AE682CF3294B0096B33B /* UIWindow+ZT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B3AE662CF3294B0096B33B /* UIWindow+ZT.swift */; };
 		97B3AE6B2CF329540096B33B /* ZTVCBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B3AE6A2CF329540096B33B /* ZTVCBuilder.swift */; };
+		97EB99D12CF4BF2D003CAC3E /* UIControl+ZT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EB99CF2CF4BF2D003CAC3E /* UIControl+ZT.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		97B3AE652CF3294B0096B33B /* UINavigationController+ZT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+ZT.swift"; sourceTree = "<group>"; };
 		97B3AE662CF3294B0096B33B /* UIWindow+ZT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+ZT.swift"; sourceTree = "<group>"; };
 		97B3AE6A2CF329540096B33B /* ZTVCBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZTVCBuilder.swift; sourceTree = "<group>"; };
+		97EB99CF2CF4BF2D003CAC3E /* UIControl+ZT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+ZT.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		97458C172CF0CCF00031CA26 /* UIKitExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				97EB99CF2CF4BF2D003CAC3E /* UIControl+ZT.swift */,
 				97B3AE652CF3294B0096B33B /* UINavigationController+ZT.swift */,
 				97B3AE662CF3294B0096B33B /* UIWindow+ZT.swift */,
 				97458C042CF0C2000031CA26 /* UIButton+ZT.swift */,
@@ -225,6 +228,7 @@
 				971D903E2C0F693000EE3A49 /* AppDelegate.swift in Sources */,
 				97B3AE6B2CF329540096B33B /* ZTVCBuilder.swift in Sources */,
 				97B3AE682CF3294B0096B33B /* UIWindow+ZT.swift in Sources */,
+				97EB99D12CF4BF2D003CAC3E /* UIControl+ZT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
