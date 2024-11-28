@@ -54,7 +54,7 @@ func loginWidget() -> some UIView {
 }
 
 @MainActor
-func loginWidget2(_ bs:Bool) -> some UIView {
+func loginWidget2(_ bs:Bool) -> UIView {
     var nameLbl: UILabel?
     var usrTextField: UITextField?
     
@@ -121,7 +121,7 @@ class SteviaVC: UIViewController {
             loginWidget2(true).zt.makeStevia { v, dom in
                 v.width(300).height(40).centerHorizontally()
                 v.Top == dom("#v1")!.Bottom + 20
-            }.build()
+            }.animation(UIView.fadeOut, UIView.fadeIn(2)).build()
         }.render()
     }
 }

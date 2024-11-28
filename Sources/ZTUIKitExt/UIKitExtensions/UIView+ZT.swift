@@ -14,6 +14,50 @@ import UIKit
 import ZTChain
 
 @MainActor
+public extension UIView {
+    convenience init(size:Double) {
+        self.init(frame: CGRect(origin: .zero, size: CGSize(width: size, height: size)))
+    }
+    
+    convenience init(x:Double = 0, y:Double = 0, w:Double = 0, h:Double = 0) {
+        self.init(frame: CGRect(origin: CGPoint(x: x, y: y), size: CGSize(width: w, height: h)))
+    }
+}
+
+@MainActor
+public extension ZTWrapper where Subject : UIView {
+    func x(_ originX:Double) -> Self {
+        var f = CGRectMake(originX, subject.frame.origin.y, subject.frame.size.width, subject.frame.size.height)
+        subject.frame = f
+        return self
+    }
+    
+    func y(_ originY:Double) -> Self {
+        var f = CGRectMake(subject.frame.origin.x, originY, subject.frame.size.width, subject.frame.size.height)
+        subject.frame = f
+        return self
+    }
+    
+    func w(_ width:Double) -> Self {
+        var f = CGRectMake(subject.frame.origin.x, subject.frame.origin.y, width, subject.frame.size.height)
+        subject.frame = f
+        return self
+    }
+    
+    func h(_ height:Double) -> Self {
+        var f = CGRectMake(subject.frame.origin.x, subject.frame.origin.y, subject.frame.size.width, height)
+        subject.frame = f
+        return self
+    }
+    
+    func size(_ size:Double) -> Self {
+        var f = CGRectMake(subject.frame.origin.x, subject.frame.origin.y, size, size)
+        subject.frame = f
+        return self
+    }
+}
+
+@MainActor
 public extension ZTWrapper where Subject : UIView {
     func corner(_ r:CGFloat) -> Self {
         subject.layer.cornerRadius = r
@@ -30,13 +74,9 @@ public extension ZTWrapper where Subject : UIView {
         return self
     }
     
-    func borderColor(_ c:CGColor?) -> Self {
-        subject.layer.borderColor = c
-        return self
-    }
-    
-    func borderWidth(_ w:CGFloat) -> Self {
+    func border(_ w:CGFloat, _ c:CGColor?) -> Self {
         subject.layer.borderWidth = w
+        subject.layer.borderColor = c
         return self
     }
     

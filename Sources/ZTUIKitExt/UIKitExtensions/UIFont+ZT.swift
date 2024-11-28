@@ -11,18 +11,15 @@
 //
 
 import UIKit
-import ZTGenericBuilder
 
-public typealias ZTVCBuilder = ZTGenericBuilder<UIViewController>
-
-public extension UINavigationController {
-    
-    convenience init(@ZTVCBuilder root: () -> UIViewController) {
-        self.init(rootViewController: root())
+public extension UIFont {
+    convenience init(_ size:Int) {
+        self.init()
+        
     }
     
-    convenience init(@ZTVCBuilder vcs: () -> [UIViewController]) {
-        self.init()
-        viewControllers = vcs()
+    @discardableResult
+    static func callAsFunction(_ size: CGFloat) -> UIFont {
+        systemFont(ofSize: size)
     }
 }

@@ -23,4 +23,12 @@ public extension UIWindow {
             makeKey()
         }
     }
+    
+    func alert(title:String = "", msg:String = "", animated:Bool = true, completion: (() -> Void)? = nil, @ZTAlertItemBuilder actions:() -> [any ZTAlertItemProtocol]) {
+        rootViewController?.alert(title: title, msg: msg, animated: animated, completion: completion, actions: actions)
+    }
+    
+    func showSheet(title:String = "", msg:String = "", animated:Bool = true, completion: (() -> Void)? = nil, @ZTAlertItemBuilder actions:() -> [any ZTAlertItemProtocol]) {
+        rootViewController?.showSheet(title: title, msg: msg, animated: animated, completion: completion, actions: actions)
+    }
 }

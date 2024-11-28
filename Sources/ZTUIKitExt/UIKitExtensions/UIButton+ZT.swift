@@ -18,13 +18,35 @@ import ZTChain
 public extension UIButton {
     private static var zt_onClickClosureKey: UInt8 = 0
     convenience init(_ title:String, _ onClick:((UIButton)->Void)? = nil) {
+        self.init(title, onClick:onClick)
+    }
+    
+    convenience init(named:String, _ onClick:((UIButton)->Void)? = nil) {
+        self.init(img:UIImage(named: named), onClick:onClick)
+    }
+    
+    convenience init(systemName:String, _ onClick:((UIButton)->Void)? = nil) {
+        self.init(img:UIImage(systemName: systemName), onClick:onClick)
+    }
+    
+    convenience init(imgFile:String, _ onClick:((UIButton)->Void)? = nil) {
+        self.init(img:UIImage(contentsOfFile: imgFile), onClick:onClick)
+    }
+    
+    convenience init(img:UIImage, _ onClick:((UIButton)->Void)? = nil) {
+        self.init(img:img, onClick:onClick)
+    }
+    
+    convenience init(_ title:String? = nil, img:UIImage? = nil, bgImg:UIImage? = nil, onClick:((UIButton)->Void)? = nil) {
         self.init(type:.custom)
-        setTitle(title, for: .normal)
         self.onClick = onClick
         addTarget(self, action: #selector(onClickHandle), for: .touchUpInside)
         
-        backgroundColor = .clear
+        setTitle(title, for: .normal)
+        setImage(img, for: .normal)
+        setBackgroundImage(bgImg, for: .normal)
         
+        backgroundColor = .clear
         titleLabel?.numberOfLines = 0
         titleLabel?.font = UIFont.systemFont(ofSize: UIFont.labelFontSize)
         setTitleColor(UIColor.label, for: .normal)

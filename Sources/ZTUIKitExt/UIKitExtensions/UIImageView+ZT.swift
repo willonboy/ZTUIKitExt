@@ -14,8 +14,27 @@ import UIKit
 
 @MainActor
 public extension UIImageView {
-    convenience init(name:String) {
+    convenience init(name:String, bundle:Bundle? = nil, conf:UIImage.Configuration? = nil) {
         self.init()
-        image = UIImage(named: name)
+        if bundle != nil {
+            image = UIImage(named: name, in: bundle, with: conf)
+        } else {
+            image = UIImage(named: name)
+        }
+    }
+    
+    convenience init(file:String) {
+        self.init()
+        image = UIImage(contentsOfFile: file)
+    }
+    
+    convenience init(systemName:String) {
+        self.init()
+        image = UIImage(systemName: systemName)
+    }
+    
+    convenience init(data:Data) {
+        self.init()
+        image = UIImage(data: data)
     }
 }

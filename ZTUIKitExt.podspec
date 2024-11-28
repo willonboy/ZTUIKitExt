@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
                         ZTUIKit extension.
                         DESC
 
-  s.homepage         = 'https://github.com/willonboy/ZTUIKit'
+  s.homepage         = 'https://github.com/willonboy/ZTUIKitExt'
   s.license          = { :type => 'MPL-2.0', :file => 'LICENSE' }
   s.author           = { 'trojan zhang' => 'willonboy@qq.com' }
   s.source           = { :git => 'https://github.com/willonboy/ZTUIKitExt.git', :tag => s.version.to_s }
@@ -22,4 +22,5 @@ Pod::Spec.new do |s|
   
   s.dependency 'ZTChain', '~> 1.0.2'
   s.dependency 'ZTStyle', '~> 2.0.0'
+  s.dependency 'ZTGenericBuilder', '~> 1.0.0'
 end

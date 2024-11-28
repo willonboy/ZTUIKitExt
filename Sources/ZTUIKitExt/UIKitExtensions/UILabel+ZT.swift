@@ -14,14 +14,24 @@ import UIKit
 
 @MainActor
 public extension UILabel {
-    convenience init(_ title:String) {
+    convenience init(_ title:String, sysFont:CGFloat? = nil, font:UIFont? = nil, color:UIColor? = nil) {
         self.init()
         text = title
         numberOfLines = 0
         sizeToFit()
         textAlignment = .natural
-        font = UIFont.systemFont(ofSize: UIFont.labelFontSize)
-        textColor = UIColor.label
+        if font != nil {
+            self.font = font
+        } else if sysFont != nil {
+            self.font = UIFont.systemFont(ofSize: sysFont!)
+        } else {
+            self.font = UIFont.systemFont(ofSize: UIFont.labelFontSize)
+        }
+        if color != nil {
+            textColor = color!
+        } else {
+            textColor = UIColor.label
+        }
     }
 }
 
